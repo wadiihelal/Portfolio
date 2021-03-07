@@ -2,13 +2,13 @@ import React from 'react';
 
 function ServicesSection({image, title, text}) {
     return (
-        <div className="ServicesSection">
-            <div className="service">
-                <div className="service-content">
+        <div >
+            <div >
+                <div >
                     <img src={image} alt=""/>
-                    <h5 className="s-title">{title}</h5>
-                    <p className="s-text">
-                        {text}
+                    <h5>React</h5>
+                    <p>
+                       text_holder
                     </p>
                 </div>
             </div>
