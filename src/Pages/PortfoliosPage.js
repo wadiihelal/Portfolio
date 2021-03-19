@@ -1,23 +1,35 @@
 import React from 'react';
+import Categories from '../Components/Categories';
+import MenuItems from '../Components/MenuItems';
 import Tittle from '../Components/Tittle';
+import portfolios from '../Components/allportfolios';
+import { useState } from 'react';
+
+const allCategories = ['All', ...new Set(portfolios.map(item => item.category))];
+
 function PortfoliosPage() {
+    const [categories, setCategories] = useState(allCategories);
+    const [menuItems, setMenuItems] = useState(portfolios);
+
+    const filter = (category) =>{
+        if(category === 'All'){
+            setMenuItems(portfolios)
+            return;
+        }
+        const filteredData  = portfolios.filter((item)=>{
+            return item.category === category;
+        })
+        setMenuItems(filteredData);
+    }
 
     return (
-        <div >
-            <div >
-                <Tittle  />
+        <div className="PortfolioPage">
+            <div className="title">
+                <Tittle title={'Portfolios'} span={'portfolios'} />
             </div>
-            <div>
-                <ol> 
-                    <li>id: 1,</li>
-                    <li>category: 'Wadii',</li>
-                    <li>link1: 'www.youtube.com',</li>
-                    <li>link2: 'www.github.com',</li>
-                    <li>icon1: 'G',</li>
-                    <li>icon2: 'Y',</li>
-                    <li>image: port1,</li>
-                    <li>title: 'Autodesk Maya'</li>
-                 </ol>
+            <div className="portfolios-data">
+                <Categories filter={filter} categories={categories} />
+                <MenuItems menuItem={menuItems} />
             </div>
         </div>
     )

@@ -3,17 +3,19 @@ import about from '../img/about.jpg';
 
 function ImageSection() {
     return (
-        <div>
-            <div >
+        <div className="ImageSection">
+            <div className="img">
                 <img src={about} alt=""/>
             </div>
-            <div>
-                <h4>I am<span> Wadii HELAL</span></h4>
-                <p>
-                   description technical of my profile
+            <div className="about-info">
+                <h4>I am<span> Lorem Ipsum</span></h4>
+                <p className="about-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Voluptatum necessitatibus perferendis numquam dolorem cumque facilis.
+                    Desir per po la ta doso vi slone ve?
                 </p>
-                <div >
-                    <div>
+                <div className="about-details">
+                    <div className="left-section">
                         <p>Full Name</p>
                         <p>Age</p>
                         <p>Nationality</p>
@@ -21,16 +23,16 @@ function ImageSection() {
                         <p>Address</p>
                         <p>Countries</p>
                     </div>
-                    <div >
-                        <p>:Wadii HELAL</p>
-                        <p>: @#</p>
-                        <p>: TUNISIAN</p>
-                        <p>: Arab, French, English</p>
-                        <p>: Ghomrassen , Tataouine</p>
-                        <p>: Tunisia, Algerie, French</p>
+                    <div className="right-section">
+                        <p>: Lorem Ipsum</p>
+                        <p>: 50</p>
+                        <p>: French</p>
+                        <p>: French, Spanish, English</p>
+                        <p>: 2 Beightbridge, BN7 GB9, United kingdom</p>
+                        <p>: France, Spain, Germany</p>
                     </div>
                 </div>
-                <button >Download Cv</button>
+                <button className="btn">Download Cv</button>
             </div>
         </div>
     )
